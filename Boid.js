@@ -46,15 +46,43 @@ this.update = function()
 
 this.checkSpeed = function()
 {
-    if(this.velocity > this.max_velocity)
+    // im sure theres a math way to do this, but ill figure that out later <3
+    if(this.velocity.x > this.max_velocity.x)
     {
-        this.velocity = this.max_velocity 
+        this.velocity.x = this.max_velocity.x
     }
-    
-    if(this.acceleration > this.max_acceleration)
+    //you have beautiful eyes
+    if(this.velocity.y > this.max_velocity.y)
     {
-        this.acceleration = this.max_acceleration
+        this.velocity.y = this.max_velocity.y
     }
+    if(this.acceleration.x > this.max_acceleration.x)
+    {
+        this.acceleration.x = this.max_acceleration.x
+    }
+    if(this.acceleration.y > this.max_acceleration.y)
+    {
+        this.acceleration.y = this.max_acceleration.y
+    }
+    if(this.velocity.x < 0)
+    {
+        this.velocity.x = 0
+    }
+    //you have beautiful eyes
+    if(this.velocity.y < 0)
+    {
+        this.velocity.y = 0 
+    }
+    if(this.acceleration.x < 0)
+    {
+        this.acceleration.x = 0
+    }
+    if(this.acceleration.y < 0)
+    {
+        this.acceleration.y = 0
+    }
+    // console.log("Bird Velocity: " + this.velocity)
+    // console.log("Bird Acceleration: " + this.acceleration)
 }
  //life is pain
  this.live = function()

@@ -7,7 +7,7 @@ function setup()
     // background('red')
 
 
-    BOIDS = createBoids(5)
+    BOIDS = createBoids(20)
 
 
 }
