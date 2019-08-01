@@ -18,8 +18,8 @@ function Boid(idNumber = -1,leader = false,speed = 1,size = 1,colour = 'green',x
     this.acceleration = createVector(0,0)
     this.position = createVector(x,y)
     this.velocity = createVector(0,0)
-    this.max_acceleration = createVector(.1,.1)
-    this.max_velocity = createVector(.1,.1)
+    this.max_acceleration = createVector(1,1)
+    this.max_velocity = createVector(.5,.5)
     // this.
     
 
@@ -44,6 +44,7 @@ this.update = function()
     this.acceleration.mult(0)
 }
 
+//this is gross :(
 this.checkSpeed = function()
 {
     // im sure theres a math way to do this, but ill figure that out later <3

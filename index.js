@@ -49,11 +49,11 @@ function drawBoids(arrayOfBoids)
 }
 
 //generates a random number
-function randomMovement(biodSpeed = .01)
+function randomMovement(biodSpeed = 5)
 {
     maxMovement = biodSpeed //* 2
     minMovement = biodSpeed * -1// 3
-    return random(minMovement,maxMovement) 
+    return random(minMovement,maxMovement)
 }
 
 //make the boid move with velocity
@@ -99,10 +99,15 @@ function rule2(boid,boidArray)
     {
         if(boid.idNumber != boidArray[i].idNumber)
         {
-            if(abs(boid.position.dist(boidArray[i].position)) < 100)
+            if(abs(boid.position.dist(boidArray[i].position)) < random(.3,1))
             {
                 c = p5.Vector.sub(c,(p5.Vector.sub(boid.position,boidArray[i].position))) 
             }
+            //leave some space yo 
+            // if(abs(boid.position.dist(boidArray[i].position)) > 50)
+            // {
+
+            // }
         }
     }
     return c
